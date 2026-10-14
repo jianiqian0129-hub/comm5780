@@ -1,0 +1,1971 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hi, I'm Vesper!</title>
+
+<style>
+
+:root {
+
+  --navy: #17265c;
+
+  --cream: #fff6df;
+
+  --yellow: #f8d95b;
+
+  --lavender: #c9c9ed;
+
+  --coral: #ff8066;
+
+  --green: #d5e1ce;
+
+  --paper: #fffaf0;
+
+}
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+  scroll-padding-top: 90px;
+
+}
+
+body {
+
+  background: var(--cream);
+
+  color: var(--navy);
+
+  font-family: "Trebuchet MS", Arial, sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+/* ===== NAVIGATION ===== */
+
+.collage-nav {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  min-height: 85px;
+
+  padding: 18px 5.5%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: var(--navy);
+
+  color: white;
+
+}
+
+.logo {
+
+  color: white;
+
+  font-family: cursive;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  transform: rotate(-3deg);
+
+}
+
+.logo span {
+
+  display: inline-block;
+
+  color: var(--yellow);
+
+  transition: transform .4s ease;
+
+}
+
+.logo:hover span {
+
+  transform: rotate(180deg) scale(1.3);
+
+}
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(16px, 3.5vw, 42px);
+
+}
+
+.nav-link {
+
+  position: relative;
+
+  padding: 9px 2px;
+
+  color: white;
+
+  font-family: cursive;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  transition: color .25s ease;
+
+}
+
+/* Hidden yellow brush until selected */
+
+.nav-link::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: -4px;
+
+  right: -4px;
+
+  bottom: 0;
+
+  height: 6px;
+
+  background: var(--yellow);
+
+  clip-path: polygon(
+
+    0 45%, 17% 20%, 34% 38%, 53% 8%,
+
+    72% 30%, 100% 0, 97% 70%, 75% 100%,
+
+    51% 75%, 28% 100%, 8% 80%
+
+  );
+
+  transform: scaleX(0) rotate(-2deg);
+
+  transform-origin: left;
+
+  transition: transform .3s ease;
+
+}
+
+.nav-link.active::after {
+
+  transform: scaleX(1) rotate(-2deg);
+
+}
+
+.nav-link:hover {
+
+  color: var(--yellow);
+
+}
+
+/* ===== HOMEPAGE PAPER ===== */
+
+.collage-hero {
+
+  position: relative;
+
+  isolation: isolate;
+
+  min-height: min(850px, calc(100vh - 85px));
+
+  padding: 75px 7% 105px;
+
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 35px;
+
+  background-color: var(--cream);
+
+  background-image:
+
+    radial-gradient(#d7c9b2 .7px, transparent .7px);
+
+  background-size: 7px 7px;
+
+  overflow: hidden;
+
+}
+
+/* Cream paper with an irregular painted top edge */
+
+.collage-hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background: var(--paper);
+
+  clip-path: polygon(
+
+    0 2%, 3% 1.5%, 5% 3%, 9% 2%,
+
+    12% 3.2%, 17% 1.8%, 21% 3%, 26% 2%,
+
+    30% 3.5%, 35% 1.7%, 39% 3%, 44% 2%,
+
+    48% 3.5%, 54% 1.7%, 59% 3%,
+
+    64% 2%, 69% 3.5%, 74% 1.8%,
+
+    80% 3%, 84% 1.7%, 90% 3.2%,
+
+    95% 2%, 100% 3%,
+
+    99% 20%, 100% 36%, 98% 50%,
+
+    100% 66%, 98% 82%, 100% 96%,
+
+    92% 97%, 85% 95%, 77% 98%,
+
+    69% 96%, 61% 99%, 53% 96%,
+
+    44% 98%, 36% 96%, 27% 99%,
+
+    18% 96%, 10% 98%, 0 96%,
+
+    2% 80%, 0 65%, 2% 50%,
+
+    0 35%, 2% 18%
+
+  );
+
+}
+
+/* Rough blue brush-paper edge at the bottom */
+
+.blue-torn-edge {
+
+  position: absolute;
+
+  z-index: 4;
+
+  left: -2%;
+
+  bottom: -2px;
+
+  width: 104%;
+
+  height: 110px;
+
+  background: var(--navy);
+
+  clip-path: polygon(
+
+    0 42%, 3% 33%, 7% 48%, 11% 24%,
+
+    16% 41%, 20% 15%, 25% 35%, 30% 20%,
+
+    35% 43%, 39% 13%, 44% 34%, 49% 22%,
+
+    54% 45%, 59% 16%, 64% 37%, 69% 22%,
+
+    74% 43%, 79% 12%, 84% 35%, 89% 20%,
+
+    94% 42%, 97% 25%, 100% 34%,
+
+    100% 100%, 0 100%
+
+  );
+
+  pointer-events: none;
+
+}
+
+/* ===== PHOTOGRAPHY COLLAGE ===== */
+
+.city-photo {
+
+  position: absolute;
+
+  z-index: 1;
+
+  width: clamp(145px, 21vw, 285px);
+
+  height: clamp(110px, 15vw, 205px);
+
+  object-fit: cover;
+
+  border: 8px solid var(--paper);
+
+  outline: 1px solid #c8bba4;
+
+  box-shadow: 4px 7px 0 #17265c35;
+
+  transition: transform .4s ease;
+
+}
+
+.city-photo:hover {
+
+  z-index: 5;
+
+}
+
+.city-left {
+
+  top: 18px;
+
+  left: -25px;
+
+  transform: rotate(-5deg);
+
+}
+
+.city-left:hover {
+
+  transform: rotate(0deg) scale(1.06);
+
+}
+
+.city-right {
+
+  top: 18px;
+
+  right: -25px;
+
+  transform: rotate(5deg);
+
+}
+
+.city-right:hover {
+
+  transform: rotate(0deg) scale(1.06);
+
+}
+
+.city-bottom {
+
+  right: 4%;
+
+  bottom: 75px;
+
+  transform: rotate(-4deg);
+
+}
+
+.city-bottom:hover {
+
+  transform: rotate(0deg) scale(1.06);
+
+}
+
+/* Tape placed over the photographs */
+
+.photo-tape {
+
+  position: absolute;
+
+  z-index: 6;
+
+  width: 75px;
+
+  height: 24px;
+
+  background: #edc879d9;
+
+  clip-path: polygon(4% 0, 100% 7%, 95% 100%, 0 90%);
+
+  pointer-events: none;
+
+}
+
+.tape-left {
+
+  top: 26px;
+
+  left: 65px;
+
+  transform: rotate(25deg);
+
+}
+
+.tape-right {
+
+  top: 25px;
+
+  right: 70px;
+
+  transform: rotate(-24deg);
+
+}
+
+/* ===== CUTOUT PORTRAIT ===== */
+
+.portrait-wrap {
+
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 425px;
+
+  justify-self: center;
+
+  align-self: end;
+
+  margin-top: 70px;
+
+  transform: translateY(52px) rotate(-2deg);
+
+  transition: transform .4s ease;
+
+}
+
+.portrait-wrap:hover {
+
+  transform: translateY(38px) rotate(1deg);
+
+}
+
+/*
+
+  SVG paper border behind the portrait.
+
+  This is decoration, not a white image background.
+
+*/
+
+.torn-paper {
+
+  position: absolute;
+
+  inset: -17px -16px -12px;
+
+  z-index: -1;
+
+  background: var(--paper);
+
+  border: 3px solid var(--navy);
+
+  clip-path: polygon(
+
+    6% 1%, 15% 3%, 23% 0, 33% 2%,
+
+    42% 0, 51% 3%, 60% 0, 70% 2%,
+
+    81% 0, 91% 3%, 99% 1%,
+
+    97% 15%, 100% 26%, 97% 39%,
+
+    100% 51%, 97% 64%, 100% 77%,
+
+    97% 91%, 90% 99%, 77% 96%,
+
+    64% 100%, 51% 97%, 38% 100%,
+
+    25% 97%, 12% 100%, 2% 95%,
+
+    4% 81%, 0 69%, 3% 55%,
+
+    0 42%, 4% 28%, 1% 14%
+
+  );
+
+}
+
+.portrait {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  background: transparent;
+
+  border: none;
+
+  box-shadow: none;
+
+  filter: drop-shadow(2px 4px 2px #17265c25);
+
+}
+
+/* ===== MAIN TITLE ===== */
+
+.hero-copy {
+
+  position: relative;
+
+  z-index: 5;
+
+  padding: 25px 0 55px;
+
+}
+
+.eyebrow {
+
+  display: inline-block;
+
+  margin-bottom: 24px;
+
+  padding: 8px 13px;
+
+  border: 2px solid var(--navy);
+
+  background: #c5dfed;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  transform: rotate(-3deg);
+
+}
+
+.collage-hero h1 {
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(65px, 9vw, 130px);
+
+  font-weight: 900;
+
+  line-height: .91;
+
+  letter-spacing: -6px;
+
+  margin-bottom: 28px;
+
+}
+
+.name-highlight {
+
+  display: inline-block;
+
+  padding: 5px 14px 14px;
+
+  color: var(--navy);
+
+  background: var(--lavender);
+
+  clip-path: polygon(
+
+    2% 7%, 17% 0, 33% 4%, 51% 0,
+
+    69% 4%, 84% 0, 100% 5%,
+
+    97% 27%, 100% 47%, 97% 69%,
+
+    100% 94%, 78% 100%, 55% 96%,
+
+    33% 100%, 13% 96%, 0 100%,
+
+    3% 74%, 0 51%, 3% 28%
+
+  );
+
+  transform: rotate(-3deg);
+
+  transition: transform .35s ease;
+
+}
+
+.name-highlight:hover {
+
+  transform: rotate(1deg) scale(1.04);
+
+}
+
+.hero-description {
+
+  max-width: 450px;
+
+  margin: 24px 0 30px;
+
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+}
+
+/* ===== INTERACTIVE BUTTON ===== */
+
+.fun-button {
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 19px 28px;
+
+  color: var(--navy);
+
+  text-decoration: none;
+
+  font-family: cursive;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  isolation: isolate;
+
+  transition: transform .3s ease;
+
+}
+
+.fun-button::before,
+
+.fun-button::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 4px -7px;
+
+  z-index: -1;
+
+  border: 4px solid var(--yellow);
+
+  border-radius: 48% 52% 45% 55% / 55% 43% 57% 45%;
+
+  transform: rotate(-3deg);
+
+  transition: transform .3s ease, background .3s ease;
+
+}
+
+.fun-button::after {
+
+  inset: 0 -11px 5px -3px;
+
+  border-width: 2px;
+
+  transform: rotate(3deg);
+
+}
+
+.fun-button:hover {
+
+  transform: translateY(-5px) rotate(-2deg);
+
+}
+
+.fun-button:hover::before {
+
+  background: var(--yellow);
+
+  transform: rotate(2deg) scale(1.04);
+
+}
+
+.fun-button:hover::after {
+
+  transform: rotate(-5deg);
+
+}
+
+.fun-button span {
+
+  display: inline-block;
+
+  transition: transform .3s ease;
+
+}
+
+.fun-button:hover span {
+
+  transform: translate(5px, -4px);
+
+}
+
+/* ===== FLOATING NOTES AND DOODLES ===== */
+
+.hero-note {
+
+  position: absolute;
+
+  z-index: 3;
+
+  top: 17%;
+
+  right: 26%;
+
+  font-family: cursive;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  transform: rotate(7deg);
+
+}
+
+.sticker {
+
+  position: absolute;
+
+  z-index: 4;
+
+  padding: 12px 15px;
+
+  background: var(--green);
+
+  font-family: cursive;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  clip-path: polygon(
+
+    4% 0, 28% 4%, 49% 0, 72% 4%,
+
+    100% 0, 96% 27%, 100% 52%,
+
+    96% 78%, 100% 100%, 73% 96%,
+
+    48% 100%, 22% 96%, 0 100%,
+
+    4% 73%, 0 49%
+
+  );
+
+  animation: float 4s ease-in-out infinite;
+
+}
+
+.sticker-left {
+
+  top: 38%;
+
+  left: 3%;
+
+  background: #f4d08a;
+
+  transform: rotate(-8deg);
+
+}
+
+.sticker-right {
+
+  top: 20%;
+
+  right: 5%;
+
+  transform: rotate(7deg);
+
+}
+
+.doodle {
+
+  position: absolute;
+
+  z-index: 5;
+
+  color: var(--coral);
+
+  font-size: 52px;
+
+  transition: transform .3s ease;
+
+  cursor: pointer;
+
+}
+
+.doodle:hover {
+
+  transform: rotate(40deg) scale(1.25);
+
+}
+
+.doodle-star {
+
+  top: 24%;
+
+  left: 36%;
+
+}
+
+.doodle-heart {
+
+  right: 7%;
+
+  bottom: 22%;
+
+  color: var(--navy);
+
+}
+
+.handwritten {
+
+  position: absolute;
+
+  z-index: 5;
+
+  left: 40%;
+
+  bottom: 11%;
+
+  font-family: cursive;
+
+  font-size: 21px;
+
+  transform: rotate(-7deg);
+
+}
+
+/* ===== BLUE TORN PAPER DIVIDER ===== */
+
+.blue-divider {
+
+  height: 95px;
+
+  margin-top: -2px;
+
+  background: var(--navy);
+
+  clip-path: polygon(
+
+    0 25%, 5% 39%, 10% 18%, 15% 37%,
+
+    21% 15%, 28% 34%, 35% 12%, 42% 31%,
+
+    49% 16%, 56% 35%, 63% 11%, 70% 32%,
+
+    77% 18%, 84% 37%, 91% 15%, 96% 30%,
+
+    100% 22%, 100% 100%, 0 100%
+
+  );
+
+}
+
+/* ===== ABOUT SECTION ===== */
+
+
+
+.section-label {
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  font-weight: bold;
+
+  margin-bottom: 24px;
+
+}
+
+
+
+
+.about strong {
+
+  background: var(--yellow);
+
+  padding: 2px 5px;
+
+}
+
+/* ===== WORK SECTION ===== */
+
+.work {
+
+  padding: 100px 9%;
+
+  background: var(--cream);
+
+  scroll-margin-top: 90px;
+
+}
+
+.projects {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+
+  margin-top: 40px;
+
+}
+
+.project {
+
+  min-height: 240px;
+
+  padding: 28px;
+
+  border: 2px solid var(--navy);
+
+  box-shadow: 6px 7px 0 var(--navy);
+
+  transition: transform .35s ease, box-shadow .35s ease;
+
+}
+
+.project:hover {
+
+  transform: translateY(-8px) rotate(-1deg);
+
+  box-shadow: 10px 12px 0 var(--navy);
+
+}
+
+.project:nth-child(1) {
+
+  background: var(--yellow);
+
+  transform: rotate(-1deg);
+
+}
+
+.project:nth-child(2) {
+
+  background: var(--lavender);
+
+  border-radius: 35px 4px 25px 4px;
+
+}
+
+.project:nth-child(3) {
+
+  background: #f4b7a7;
+
+  border-radius: 4px 28px 4px 25px;
+
+}
+
+.project:nth-child(4) {
+
+  background: #b8d8e8;
+
+  transform: rotate(1deg);
+
+}
+
+.project small {
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+}
+
+.project h3 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(27px, 4vw, 40px);
+
+  margin: 25px 0 15px;
+
+}
+
+.project p {
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+}
+
+/* ===== CONTACT ===== */
+
+.contact {
+
+  padding: 90px 8%;
+
+  text-align: center;
+
+  color: var(--cream);
+
+  background: var(--navy);
+
+  scroll-margin-top: 90px;
+
+}
+
+.contact h2 {
+
+  color: var(--yellow);
+
+}
+
+.contact p {
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+
+}
+
+.contact .fun-button {
+
+  color: var(--cream);
+
+}
+
+footer {
+
+  padding: 24px;
+
+  color: var(--cream);
+
+  background: var(--navy);
+
+  text-align: center;
+
+  font-size: 13px;
+
+}
+
+/* ===== SCROLL REVEAL ===== */
+
+.reveal {
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition: opacity .7s ease, transform .7s ease;
+
+}
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+@keyframes float {
+
+  0%, 100% { translate: 0 0; }
+
+  50% { translate: 0 -8px; }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+  .collage-nav {
+
+    min-height: 72px;
+
+    padding: 14px 4%;
+
+  }
+
+  .logo {
+
+    font-size: 23px;
+
+  }
+
+  .nav-links {
+
+    gap: 12px;
+
+  }
+
+  .nav-link {
+
+    font-size: 12px;
+
+  }
+
+  .collage-hero {
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 100px 7% 95px;
+
+    min-height: auto;
+
+  }
+
+  .hero-copy {
+
+    grid-row: 1;
+
+    padding-top: 25px;
+
+  }
+
+  .collage-hero h1 {
+
+    font-size: clamp(63px, 14vw, 96px);
+
+    letter-spacing: -4px;
+
+  }
+
+  .portrait-wrap {
+
+    grid-row: 2;
+
+    width: 75%;
+
+    max-width: 320px;
+
+    justify-self: start;
+
+    margin-top: 10px;
+
+    transform: translateY(15px) rotate(-2deg);
+
+  }
+
+  .portrait-wrap:hover {
+
+    transform: translateY(5px) rotate(1deg);
+
+  }
+
+  .city-photo {
+
+    width: 110px;
+
+    height: 85px;
+
+    border-width: 5px;
+
+  }
+
+  .city-left {
+
+    top: 5px;
+
+    left: -20px;
+
+  }
+
+  .city-right {
+
+    top: 5px;
+
+    right: -20px;
+
+  }
+
+  .city-bottom {
+
+    display: none;
+
+  }
+
+  .photo-tape {
+
+    width: 48px;
+
+    height: 17px;
+
+  }
+
+  .hero-note {
+
+    top: 44%;
+
+    right: 5%;
+
+    font-size: 11px;
+
+  }
+
+  .sticker-left {
+
+    display: none;
+
+  }
+
+  .sticker-right {
+
+    top: 42%;
+
+    right: 5%;
+
+    font-size: 11px;
+
+  }
+
+  .doodle-star {
+
+    top: 37%;
+
+    left: auto;
+
+    right: 7%;
+
+    font-size: 35px;
+
+  }
+
+  .doodle-heart {
+
+    bottom: 9%;
+
+    right: 5%;
+
+    font-size: 35px;
+
+  }
+
+  .handwritten {
+
+    left: auto;
+
+    right: 8%;
+
+    bottom: 4%;
+
+    font-size: 16px;
+
+  }
+
+  .blue-divider {
+
+    height: 60px;
+
+  }
+
+  .about,
+
+  .work {
+
+    padding: 70px 7%;
+
+  }
+
+  .projects {
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+  }
+
+  .project:nth-child(1),
+
+  .project:nth-child(4) {
+
+    transform: none;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after {
+
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+
+/* ===== ABOUT ME: SCRAPBOOK EDITORIAL PAGE ===== */
+
+.about {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    /* No wave at the top */
+    border-top: none;
+    background-color: #fff8e8;
+    background-image:
+        radial-gradient(#d6c8ae 0.55px, transparent 0.55px);
+    background-size: 8px 8px;
+
+    padding: 65px 8% 45px;
+    color: #17265c;
+}
+
+/* Small editorial page label */
+.about-top-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #c8bba5;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Two-column magazine layout */
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: clamp(35px, 7vw, 100px);
+    padding: 75px 0 65px;
+}
+
+.about-heading {
+    position: relative;
+    transform: rotate(-2deg);
+}
+
+.about-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+    background: #d7e4bd;
+    padding: 8px 12px;
+    transform: rotate(2deg);
+}
+
+.about-heading h2 {
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+.about-heading h2 span {
+    position: relative;
+    display: inline-block;
+    color: #ed684f;
+    transform: rotate(-3deg);
+}
+
+/* Hand-drawn yellow underline */
+.yellow-scribble {
+    width: min(280px, 90%);
+    height: 13px;
+    margin-top: 22px;
+    background: #f8d95b;
+    border-radius: 48% 20% 55% 30%;
+    transform: rotate(-3deg);
+    clip-path: polygon(
+        0 30%, 15% 5%, 37% 35%,
+        60% 10%, 82% 32%, 100% 20%,
+        98% 70%, 70% 85%, 45% 65%,
+        20% 90%, 2% 65%
+    );
+}
+
+.about-handwriting {
+    margin-top: 22px;
+    font-family: cursive;
+    font-size: 22px;
+    transform: rotate(-5deg);
+}
+
+/* Cream paper card, like a cut-out magazine clipping */
+.about-text-card {
+    position: relative;
+    background: #fffdf5;
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px solid #e3d5bd;
+    box-shadow: 9px 10px 0 #d9c9ae;
+    transform: rotate(1.5deg);
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.about-text-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 12px 14px 0 #d9c9ae;
+}
+
+/* Decorative tape */
+.about-text-card .tape {
+    position: absolute;
+    top: -16px;
+    left: 38%;
+    width: 95px;
+    height: 28px;
+    background: #f8d95b;
+    opacity: 0.88;
+    transform: rotate(-5deg);
+    clip-path: polygon(
+        0 8%, 20% 0, 40% 7%,
+        60% 0, 80% 8%, 100% 0,
+        96% 100%, 70% 94%, 45% 100%,
+        20% 94%, 3% 100%
+    );
+}
+
+.about-text-card > p {
+    font-size: 16px;
+    line-height: 1.95;
+    margin-bottom: 20px;
+}
+
+.about-text-card .about-highlight {
+    display: inline;
+    font-family: cursive;
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: bold;
+    background: linear-gradient(
+        transparent 52%,
+        #f8d95b 52%,
+        #f8d95b 90%,
+        transparent 90%
+    );
+    padding: 0 3px;
+}
+
+/* Little stamp on the paper */
+.about-stamp {
+    display: block;
+    width: 82px;
+    height: 82px;
+    margin: 28px 0 0 auto;
+    border: 2px dashed #ed684f;
+    border-radius: 50%;
+    color: #ed684f;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    align-content: center;
+    transform: rotate(10deg);
+}
+
+/* Bottom page marker */
+.about-bottom-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #c8bba5;
+    padding-top: 18px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .about {
+        padding: 42px 7% 30px;
+    }
+
+    .about-top-note {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 55px 0;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(60px, 15vw, 90px);
+    }
+
+    .about-text-card {
+        margin: 0 5px;
+        padding: 30px 25px;
+    }
+
+    .about-text-card > p {
+        font-size: 15px;
+    }
+
+    .about-bottom-note {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Smooth transition between Home and About Me */
+
+.collage-hero {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Let both sections share the same paper background */
+.about {
+  position: relative;
+  margin-top: -1px;
+  padding-top: 90px;
+  background: var(--cream);
+  border-top: none;
+}
+
+/* Remove the hard blue edge if it still appears */
+.blue-divider {
+  display: none;
+}
+
+/* A subtle paper-like transition */
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 230, 0),
+    var(--cream)
+  );
+  pointer-events: none;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="collage-nav">
+
+  <a class="logo" href="#home">Vesper <span>☆</span></a>
+
+  <div class="nav-links">
+
+    <a href="#home" class="nav-link active">Home</a>
+
+    <a href="#about" class="nav-link">About Me</a>
+
+    <a href="#work" class="nav-link">Work</a>
+
+    <a href="#contact" class="nav-link">Contact</a>
+
+  </div>
+
+</nav>
+
+<main>
+
+<!-- ===== HOME ===== -->
+
+<section class="collage-hero" id="home">
+
+  <!-- City photos: change filenames to your own images -->
+
+  <img class="city-photo city-left"
+
+       src="london.jpg" alt="London city view">
+
+  <img class="city-photo city-right"
+
+       src="city-sunset.jpg" alt="City at sunset">
+
+  <img class="city-photo city-bottom"
+
+       src="travel-photo.jpg" alt="Travel memory">
+
+  <span class="photo-tape tape-left"></span>
+
+  <span class="photo-tape tape-right"></span>
+
+  <!-- Floating collage stickers -->
+
+  <div class="sticker sticker-left">
+
+    GOOD IDEAS<br>BETTER DAYS ☺
+
+  </div>
+
+  <div class="sticker sticker-right">
+
+    CREATIVE MIND<br>BIG DREAMS ✳
+
+  </div>
+
+  <span class="doodle doodle-star">✳</span>
+
+  <span class="doodle doodle-heart">♡</span>
+
+  <div class="hero-note">
+
+    Different places<br>
+
+    Same sky ♡
+
+  </div>
+
+  <!-- Your transparent cutout portrait -->
+
+  <div class="portrait-wrap">
+
+    <div class="torn-paper"></div>
+
+    <img
+
+      class="portrait"
+
+      src="vesper-cutout.png"
+
+      alt="Vesper's portrait"
+
+    >
+
+  </div>
+
+  <!-- Main headline -->
+
+  <div class="hero-copy">
+
+    <p class="eyebrow">A LITTLE BIT OF EVERYTHING ✳</p>
+
+    <h1>
+
+      Hi, I'm<br>
+
+      <span class="name-highlight">Vesper.</span>
+
+    </h1>
+
+    <p class="hero-description">
+
+      Advertising student, digital media enthusiast,
+
+      and a curious mind exploring the world of creativity.
+
+    </p>
+
+    <a class="fun-button" href="#about">
+
+      Get to know me <span>↗</span>
+
+    </a>
+
+  </div>
+
+  <div class="handwritten">stay curious!</div>
+
+  <div class="blue-torn-edge"></div>
+
+</section>
+
+
+<!-- ===== ABOUT ME ===== -->
+
+<section class="about" id="about">
+
+  <div class="about-top-note">
+    <span>01 / THE PERSON BEHIND THE IDEAS</span>
+    <span>A LITTLE ABOUT ME ✳</span>
+  </div>
+
+  <div class="about-layout">
+
+    <!-- Left: Editorial heading -->
+    <div class="about-heading reveal">
+
+      <p class="about-eyebrow">
+        NICE TO MEET YOU!
+      </p>
+
+      <h2>
+        More than<br>
+        just <span>Vesper.</span>
+      </h2>
+
+      <div class="yellow-scribble"></div>
+
+      <p class="about-handwriting">
+        A curious mind, always exploring ♡
+      </p>
+
+    </div>
+
+    <!-- Right: Scrapbook paper card -->
+    <div class="about-text-card reveal">
+
+      <span class="tape"></span>
+
+      <p>
+        Hi again! I'm Vesper, an advertising graduate
+        exploring the world of digital media and
+        communication.
+      </p>
+
+      <p>
+        I'm fascinated by how <strong>creative ideas</strong>,
+        digital platforms and people connect. I love
+        discovering new perspectives and turning
+        little sparks of inspiration into something meaningful.
+      </p>
+
+      <p class="about-highlight">
+        Always curious. Always collecting ideas.
+      </p>
+
+      <span class="about-stamp">
+        MADE OF<br>
+        CURIOSITY<br>
+        ✳ 2026 ✳
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="about-bottom-note">
+    <span>ENDLESS CURIOSITY</span>
+    <span>PAGE 01 ✳</span>
+  </div>
+
+</section>
+
+<!-- ===== WORK ===== -->
+
+<section class="work" id="work">
+
+  <p class="section-label">02 / MY CREATIVE CORNER</p>
+
+  <h2>Ideas in<br>the wild.</h2>
+
+  <div class="projects">
+
+    <article class="project reveal">
+
+      <small>PROJECT 01</small>
+
+      <h3>Advertising<br>& Campaigns</h3>
+
+      <p>Creative concepts, brand ideas and audience insights.</p>
+
+    </article>
+
+    <article class="project reveal">
+
+      <small>PROJECT 02</small>
+
+      <h3>Digital<br>Culture</h3>
+
+      <p>Exploring platforms, online communities and digital society.</p>
+
+    </article>
+
+    <article class="project reveal">
+
+      <small>PROJECT 03</small>
+
+      <h3>Visual<br>Experiments</h3>
+
+      <p>Creative ideas, design experiments and visual storytelling.</p>
+
+    </article>
+
+    <article class="project reveal">
+
+      <small>PROJECT 04</small>
+
+      <h3>More to<br>come...</h3>
+
+      <p>A growing collection of projects, ideas and inspiration.</p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ===== CONTACT ===== -->
+
+<section class="contact" id="contact">
+
+  <p class="section-label">03 / LET'S CONNECT</p>
+
+  <h2>Let's make<br>something cool.</h2>
+
+  <p>Have an idea? I'd love to hear about it.</p>
+
+  <a class="fun-button" href="mailto:your-email@example.com">
+
+    Say hello <span>↗</span>
+
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+
+  Made with curiosity & a little bit of chaos ✳
+
+  <br><br>
+
+  © 2026 Vesper
+
+</footer>
+
+<script>
+
+// ===== CLICK NAVIGATION =====
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+const sections = document.querySelectorAll(
+
+  "#home, #about, #work, #contact"
+
+);
+
+function setActiveLink(id) {
+
+  navLinks.forEach(link => {
+
+    link.classList.toggle(
+
+      "active",
+
+      link.getAttribute("href") === "#" + id
+
+    );
+
+  });
+
+}
+
+navLinks.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    const id = link.getAttribute("href").slice(1);
+
+    setActiveLink(id);
+
+  });
+
+});
+
+// ===== NAVIGATION FOLLOWS SCROLL =====
+
+const sectionObserver = new IntersectionObserver(entries => {
+
+  const visible = entries
+
+    .filter(entry => entry.isIntersecting)
+
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+  if (visible.length > 0) {
+
+    setActiveLink(visible[0].target.id);
+
+  }
+
+}, {
+
+  rootMargin: "-15% 0px -60% 0px",
+
+  threshold: [0, 0.1, 0.3, 0.6]
+
+});
+
+sections.forEach(section => sectionObserver.observe(section));
+
+// ===== PROJECTS REVEAL ON SCROLL =====
+
+const revealObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add("visible");
+
+      revealObserver.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {
+
+  threshold: 0.15
+
+});
+
+document.querySelectorAll(".reveal").forEach(item => {
+
+  revealObserver.observe(item);
+
+});
+
+</script>
+
+</body>
+
+</html>
