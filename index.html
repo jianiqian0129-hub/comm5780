@@ -386,7 +386,7 @@ body {
 
   right: 4%;
 
-  bottom: 75px;
+  bottom: 132px;
 
   transform: rotate(-4deg);
 
@@ -468,52 +468,6 @@ body {
 
 }
 
-/*
-
-  SVG paper border behind the portrait.
-
-  This is decoration, not a white image background.
-
-*/
-
-.torn-paper {
-
-  position: absolute;
-
-  inset: -17px -16px -12px;
-
-  z-index: -1;
-
-  background: var(--paper);
-
-  border: 3px solid var(--navy);
-
-  clip-path: polygon(
-
-    6% 1%, 15% 3%, 23% 0, 33% 2%,
-
-    42% 0, 51% 3%, 60% 0, 70% 2%,
-
-    81% 0, 91% 3%, 99% 1%,
-
-    97% 15%, 100% 26%, 97% 39%,
-
-    100% 51%, 97% 64%, 100% 77%,
-
-    97% 91%, 90% 99%, 77% 96%,
-
-    64% 100%, 51% 97%, 38% 100%,
-
-    25% 97%, 12% 100%, 2% 95%,
-
-    4% 81%, 0 69%, 3% 55%,
-
-    0 42%, 4% 28%, 1% 14%
-
-  );
-
-}
-
 .portrait {
 
   display: block;
@@ -543,28 +497,6 @@ body {
   z-index: 5;
 
   padding: 25px 0 55px;
-
-}
-
-.eyebrow {
-
-  display: inline-block;
-
-  margin-bottom: 24px;
-
-  padding: 8px 13px;
-
-  border: 2px solid var(--navy);
-
-  background: #c5dfed;
-
-  font-size: 11px;
-
-  font-weight: 900;
-
-  letter-spacing: 2px;
-
-  transform: rotate(-3deg);
 
 }
 
@@ -872,33 +804,7 @@ body {
 
 /* ===== BLUE TORN PAPER DIVIDER ===== */
 
-.blue-divider {
-
-  height: 95px;
-
-  margin-top: -2px;
-
-  background: var(--navy);
-
-  clip-path: polygon(
-
-    0 25%, 5% 39%, 10% 18%, 15% 37%,
-
-    21% 15%, 28% 34%, 35% 12%, 42% 31%,
-
-    49% 16%, 56% 35%, 63% 11%, 70% 32%,
-
-    77% 18%, 84% 37%, 91% 15%, 96% 30%,
-
-    100% 22%, 100% 100%, 0 100%
-
-  );
-
-}
-
 /* ===== ABOUT SECTION ===== */
-
-
 
 .section-label {
 
@@ -912,9 +818,6 @@ body {
 
 }
 
-
-
-
 .about strong {
 
   background: var(--yellow);
@@ -927,7 +830,7 @@ body {
 
 .work {
 
-  padding: 100px 9%;
+  padding: 30px 9% 38px;
 
   background: var(--cream);
 
@@ -941,17 +844,17 @@ body {
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 25px;
+  gap: 17px;
 
-  margin-top: 40px;
+  margin-top: 16px;
 
 }
 
 .project {
 
-  min-height: 240px;
+  min-height: 165px;
 
-  padding: 28px;
+  padding: 18px 22px;
 
   border: 2px solid var(--navy);
 
@@ -1025,6 +928,200 @@ body {
 
   line-height: 1.8;
 
+}
+
+/* ===== DIGITAL PRACTICE REFLECTION ===== */
+.reflection {
+  padding: 78px 9% 95px;
+  background: var(--paper);
+  scroll-margin-top: 90px;
+}
+.reflection-top-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #c8bba5;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 1;
+  filter: none;
+}
+.reflection-heading {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: end;
+  gap: 24px 38px;
+  padding: 58px 0 42px;
+}
+.reflection-eyebrow,
+.reflection-section-label {
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.reflection-eyebrow {
+  grid-column: 1;
+  margin-bottom: -12px;
+}
+.reflection-heading h2 {
+  grid-column: 1;
+  margin: 0;
+  font-size: clamp(44px, 6.4vw, 82px);
+  line-height: .98;
+  letter-spacing: -3px;
+}
+.reflection-heading h2 span {
+  color: #ed684f;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+.reflection-intro {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  max-width: 380px;
+  margin: 0 0 8px auto;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.week-entry {
+  padding: clamp(25px, 4vw, 48px);
+  border: 2px solid var(--navy);
+  background: #fffdf5;
+  box-shadow: 8px 9px 0 #d9c9ae;
+}
+.week-entry-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #d8ceb9;
+}
+.week-number {
+  flex: none;
+  padding: 9px 13px;
+  background: var(--yellow);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transform: rotate(-2deg);
+}
+.week-entry-heading h3 {
+  margin: 5px 0 0;
+  font: bold clamp(24px, 3vw, 34px)/1.2 Georgia, serif;
+}
+.week-entry-heading .reflection-section-label {
+  margin: 0;
+}
+.reflection-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  padding: 32px 0 38px;
+}
+.reflection-note + .reflection-note {
+  padding-left: 34px;
+  border-left: 1px solid #d8ceb9;
+}
+.reflection-note h4,
+.assignment-heading h4 {
+  margin: 10px 0 14px;
+  font: bold 25px/1.2 Georgia, serif;
+}
+.reflection-note p:not(.reflection-section-label),
+.assignment-heading > p:last-child {
+  font-size: 15px;
+  line-height: 1.9;
+}
+.assignment-block {
+  padding-top: 30px;
+  border-top: 1px solid #d8ceb9;
+}
+.assignment-heading > p:last-child {
+  margin: 0;
+}
+.assignment-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+.assignment-gallery figure {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #dfd2bd;
+  background: #fff;
+  box-shadow: 4px 5px 0 #d9c9ae;
+  transform: rotate(-.4deg);
+}
+.assignment-gallery figure:nth-child(2) {
+  transform: rotate(.4deg);
+}
+.assignment-gallery figure:first-child {
+  grid-column: 1 / -1;
+  transform: rotate(.2deg);
+}
+.assignment-gallery img {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  background: #fbfaf7;
+}
+.assignment-gallery figcaption {
+  padding: 12px 7px 5px;
+  color: #343d5d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .reflection {
+    padding: 58px 7% 70px;
+  }
+  .reflection-top-note {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .reflection-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 45px 0 32px;
+  }
+  .reflection-eyebrow,
+  .reflection-heading h2,
+  .reflection-intro {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .reflection-heading h2 {
+    font-size: clamp(43px, 12vw, 68px);
+    letter-spacing: -2px;
+  }
+  .reflection-intro {
+    margin: 0;
+  }
+  .week-entry-heading {
+    align-items: flex-start;
+  }
+  .reflection-notes,
+  .assignment-gallery {
+    grid-template-columns: 1fr;
+  }
+  .reflection-notes {
+    gap: 26px;
+  }
+  .reflection-note + .reflection-note {
+    padding: 25px 0 0;
+    border-top: 1px solid #d8ceb9;
+    border-left: 0;
+  }
+  .assignment-gallery figure:first-child {
+    grid-column: auto;
+  }
 }
 
 /* ===== CONTACT ===== */
@@ -1285,12 +1382,6 @@ footer {
 
   }
 
-  .blue-divider {
-
-    height: 60px;
-
-  }
-
   .about,
 
   .work {
@@ -1347,20 +1438,6 @@ footer {
 
     padding: 65px 8% 45px;
     color: #17265c;
-}
-
-/* Small editorial page label */
-.about-top-note {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #c8bba5;
-
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
 }
 
 /* Two-column magazine layout */
@@ -1498,27 +1575,10 @@ footer {
     transform: rotate(10deg);
 }
 
-/* Bottom page marker */
-.about-bottom-note {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #c8bba5;
-    padding-top: 18px;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
 /* Responsive layout */
 @media (max-width: 700px) {
     .about {
         padding: 42px 7% 30px;
-    }
-
-    .about-top-note {
-        font-size: 9px;
-        letter-spacing: 1px;
     }
 
     .about-layout {
@@ -1540,10 +1600,6 @@ footer {
         font-size: 15px;
     }
 
-    .about-bottom-note {
-        font-size: 8px;
-        letter-spacing: 1px;
-    }
 }
 
 /* Smooth transition between Home and About Me */
@@ -1563,15 +1619,11 @@ footer {
   border-top: none;
 }
 
-/* Remove the hard blue edge if it still appears */
-.blue-divider {
-  display: none;
-}
-
 /* A subtle paper-like transition */
 .about::before {
   content: "";
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -1584,6 +1636,539 @@ footer {
   pointer-events: none;
 }
 
+/* Home page refinements to match the scrapbook reference */
+.collage-nav {
+  min-height: 88px;
+  padding: 16px 5.2%;
+  background-color: #12275c;
+  background-image: radial-gradient(rgba(255,255,255,.12) .7px, transparent .8px);
+  background-size: 5px 5px;
+}
+
+.logo { font-size: 36px; }
+.nav-links { gap: clamp(18px, 3vw, 42px); }
+.nav-link { font-size: 20px; }
+.collage-hero {
+  min-height: min(850px, calc(100vh - 88px));
+  grid-template-columns: .95fr 1.05fr;
+  padding: 70px 7% 105px;
+}
+.hero-copy { padding: 15px 0 50px; }
+.collage-hero h1 {
+  font-family: Impact, "Arial Black", Georgia, serif;
+  font-size: clamp(76px, 10vw, 145px);
+  line-height: .88;
+  letter-spacing: -5px;
+  margin-bottom: 25px;
+}
+.collage-hero h1 .headline-hi {
+  display: block;
+  position: relative;
+  left: -14px;
+  transform: rotate(-2deg);
+}
+.collage-hero h1 .name-highlight {
+  position: relative;
+  left: 20px;
+  transform: rotate(-3deg);
+}
+.name-highlight { padding: 7px 18px 18px; }
+.hero-description {
+  max-width: 540px;
+  margin: 25px 0 32px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.hero-extra-note {
+  position: absolute;
+  z-index: 3;
+  top: 22%;
+  left: 39%;
+  max-width: 150px;
+  color: #31447b;
+  font: 16px/1.55 cursive;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+.hero-extra-note strong { color: #e56c55; font-size: 19px; }
+.paper-flower {
+  position: absolute;
+  z-index: 3;
+  top: 47%;
+  left: 53%;
+  color: #e6a74b;
+  font: 42px/1 cursive;
+  transform: rotate(14deg);
+}
+.fun-button {
+  padding: 19px 32px;
+  font-size: 23px;
+}
+.fun-button::before { background: var(--yellow); }
+.portrait-wrap { max-width: 470px; }
+.city-bottom { bottom: 145px; }
+.work { padding: 30px 9% 36px; }
+.work h2 { font-size: clamp(36px, 4vw, 54px); line-height: .98; }
+.work .projects { margin-top: 14px; gap: 16px; }
+.work .project { min-height: 158px; padding: 16px 20px; }
+.work .project h3 { margin: 10px 0 6px; font-size: clamp(26px, 3vw, 34px); line-height: 1.05; }
+.work .project p { line-height: 1.4; }
+.about, .work, .reflection, .contact {
+  scroll-margin-top: 0;
+  min-height: calc(100vh - 90px);
+}
+.about { padding: 44px 8% 18px; }
+.work { padding: 44px 9% 36px; }
+.reflection { padding: 44px 9% 95px; background: var(--cream); }
+.contact { padding-top: 44px; }
+.about { display: flex; flex-direction: column; }
+.about-layout { flex: 1; padding-top: 45px; padding-bottom: 16px; }
+.work-top-note { margin-bottom: 0; }
+.work h2 { margin: 52px 0 18px; }
+.work .projects { margin-top: 0; }
+.reflection-heading { padding-top: 30px; padding-bottom: 24px; }
+
+/* Make the blue edge read as torn paper instead of a sawtooth strip. */
+.blue-torn-edge {
+  height: 178px;
+  background-color: #17265c;
+  background-image: radial-gradient(rgba(255,255,255,.11) .75px, transparent .8px);
+  background-size: 6px 6px;
+  clip-path: polygon(
+    0 34%, 2% 32%, 4% 38%, 6% 28%, 8% 36%, 11% 24%, 13% 33%,
+    16% 22%, 18% 34%, 21% 25%, 24% 39%, 27% 28%, 30% 36%,
+    33% 21%, 36% 33%, 39% 25%, 42% 39%, 45% 26%, 48% 35%,
+    51% 23%, 54% 34%, 57% 26%, 60% 40%, 63% 24%, 66% 35%,
+    69% 23%, 72% 33%, 75% 26%, 78% 39%, 81% 24%, 84% 36%,
+    87% 25%, 90% 38%, 93% 22%, 96% 34%, 98% 27%, 100% 35%,
+    100% 100%, 0 100%
+  );
+}
+.blue-torn-edge::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 12px;
+  background: #f2e6cb;
+  clip-path: polygon(0 45%, 8% 20%, 16% 55%, 25% 15%, 34% 65%, 43% 25%, 52% 60%, 61% 18%, 70% 55%, 79% 22%, 88% 60%, 96% 20%, 100% 42%, 100% 100%, 0 100%);
+}
+
+.portrait { filter: drop-shadow(3px 7px 3px #17265c30); }
+
+/* Reserved scrapbook frame for an additional personal photo. */
+.extra-photo-slot {
+  position: absolute;
+  z-index: 2;
+  left: 2.5%;
+  bottom: 17%;
+  width: clamp(110px, 12vw, 155px);
+  aspect-ratio: 1.12;
+  padding: 7px;
+  border: 1px solid #c8bba4;
+  background: var(--paper);
+  box-shadow: 4px 6px 0 #17265c30;
+  transform: rotate(-7deg);
+}
+.extra-photo-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.extra-photo-slot::before,
+.extra-photo-slot::after {
+  content: "";
+  position: absolute;
+  width: 43px;
+  height: 13px;
+  background: #efcf83c9;
+  clip-path: polygon(3% 0, 100% 8%, 95% 100%, 0 91%);
+}
+.extra-photo-slot::before { top: -7px; left: 35%; transform: rotate(-8deg); }
+.extra-photo-slot::after { bottom: -7px; right: 9%; transform: rotate(12deg); }
+
+/* Small hand-drawn details fill the open paper without crowding the portrait. */
+.extra-doodle {
+  position: absolute;
+  z-index: 3;
+  color: var(--navy);
+  font-family: cursive;
+  pointer-events: none;
+}
+.doodle-spark-one { top: 43%; left: 49%; font-size: 28px; transform: rotate(12deg); }
+.doodle-spark-two { top: 67%; left: 48%; color: #e9a94c; font-size: 22px; transform: rotate(-12deg); }
+.doodle-caption { top: 63%; left: 4%; font-size: 14px; transform: rotate(-9deg); }
+.tiny-dots {
+  position: absolute;
+  z-index: 2;
+  top: 48%;
+  right: 6%;
+  width: 45px;
+  height: 36px;
+  background-image: radial-gradient(#e7a94e 2px, transparent 2.5px);
+  background-size: 13px 13px;
+  transform: rotate(15deg);
+}
+
+@media (max-width: 700px) {
+  .collage-nav { min-height: 72px; }
+  .logo { font-size: 24px; }
+  .nav-links { gap: 5px; }
+  .nav-link { font-size: 10px; padding-left: 0; padding-right: 0; }
+  .collage-hero { padding-top: 90px; }
+  .collage-hero h1 { font-size: clamp(63px, 14vw, 96px); }
+  .collage-hero h1 .headline-hi { left: -7px; }
+  .collage-hero h1 .name-highlight { left: 10px; }
+  .hero-extra-note, .paper-flower { display: none; }
+  .extra-photo-slot { left: 4%; bottom: 5%; width: 100px; font-size: 9px; }
+  .doodle-caption, .doodle-spark-one, .doodle-spark-two, .tiny-dots { display: none; }
+}
+
+/* Home: one connected paper collage, with photos bleeding in from its torn edges. */
+.collage-hero {
+  min-height: min(900px, max(700px, calc(100vh - 88px)));
+  padding: 48px 7% 72px;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: clamp(20px, 3vw, 48px);
+  background-color: #17265c;
+  background-image: radial-gradient(rgba(255,255,255,.12) .7px, transparent .8px);
+  background-size: 6px 6px;
+}
+
+.collage-hero::before {
+  inset: 0;
+  z-index: 0;
+  background-color: var(--paper);
+  background-image: radial-gradient(#d7c9b2 .65px, transparent .7px);
+  background-size: 7px 7px;
+  clip-path: polygon(
+    0 2%, 5% 3%, 10% 1%, 15% 3%, 21% 1%, 27% 3%, 33% 1%, 40% 3%,
+    47% 1%, 54% 3%, 61% 1%, 68% 3%, 75% 1%, 82% 3%, 89% 1%, 95% 3%, 100% 1%,
+    99% 18%, 100% 34%, 98% 51%, 100% 67%, 98% 83%, 100% 93%,
+    94% 92%, 88% 95%, 81% 92%, 74% 95%, 67% 92%, 60% 95%, 53% 92%,
+    46% 95%, 39% 92%, 32% 95%, 25% 92%, 18% 95%, 11% 92%, 5% 95%, 0 92%,
+    2% 78%, 0 63%, 2% 48%, 0 33%, 2% 17%
+  );
+}
+
+.portrait-wrap {
+  z-index: 3;
+  isolation: isolate;
+  width: min(100%, 440px);
+  max-width: 440px;
+  margin-top: 20px;
+  transform: translateY(30px) rotate(-2deg);
+}
+
+.portrait-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 22% -8% 2%;
+  background-color: #17265c;
+  background-image: radial-gradient(rgba(255,255,255,.14) .7px, transparent .8px);
+  background-size: 6px 6px;
+  clip-path: polygon(5% 18%, 13% 13%, 20% 16%, 25% 8%, 34% 13%, 42% 5%, 50% 12%, 58% 4%, 66% 12%, 76% 7%, 85% 15%, 95% 11%, 100% 24%, 96% 39%, 100% 53%, 96% 69%, 100% 84%, 91% 96%, 76% 92%, 63% 100%, 49% 94%, 36% 100%, 23% 93%, 10% 98%, 0 88%, 4% 72%, 0 57%, 4% 41%);
+}
+
+.portrait-wrap:hover {
+  transform: translateY(20px) rotate(1deg);
+}
+
+.portrait {
+  filter: drop-shadow(0 7px 4px #17265c35);
+}
+
+.hero-copy {
+  z-index: 5;
+  width: 100%;
+  max-width: 650px;
+  padding: 0 0 28px;
+  justify-self: center;
+}
+
+.collage-hero h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 22px;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(78px, 9.3vw, 132px);
+  line-height: .88;
+  letter-spacing: -4px;
+}
+
+.collage-hero h1 .headline-hi {
+  display: block;
+  position: relative;
+  left: -22px;
+  color: var(--navy);
+  transform: rotate(-7deg);
+}
+
+.collage-hero h1 .name-highlight {
+  display: block;
+  position: relative;
+  left: 58px;
+  margin-top: -3px;
+  padding: 8px 24px 17px;
+  color: var(--navy);
+  font-family: Impact, "Arial Black", sans-serif;
+  font-style: normal;
+  transform: rotate(-5deg);
+}
+
+.hero-description {
+  max-width: 500px;
+  margin: 22px 0 24px;
+  font-family: "Courier New", monospace;
+  font-size: 17px;
+  line-height: 1.65;
+  letter-spacing: .2px;
+}
+
+.fun-button {
+  padding: 17px 30px;
+  font-family: "Marker Felt", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 23px;
+  transform: rotate(-2deg);
+}
+
+.fun-button::before {
+  background: var(--yellow);
+  border: 3px solid var(--yellow);
+}
+
+.fun-button::after {
+  border-width: 2px;
+}
+
+.logo {
+  font-family: "Marker Felt", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 36px;
+  font-weight: 500;
+  transform: rotate(-5deg);
+}
+
+.city-photo {
+  z-index: 1;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  filter: saturate(.9) contrast(.98);
+}
+
+.city-photo:hover {
+  z-index: 1;
+  filter: saturate(1) contrast(1);
+}
+
+.city-left {
+  top: 3%;
+  left: -2%;
+  width: clamp(260px, 26vw, 360px);
+  height: clamp(185px, 20vw, 270px);
+  clip-path: polygon(0 3%, 18% 0, 35% 3%, 52% 0, 69% 4%, 86% 1%, 100% 5%, 97% 21%, 100% 39%, 97% 58%, 100% 77%, 96% 98%, 76% 95%, 58% 100%, 39% 96%, 18% 100%, 0 95%, 3% 76%, 0 56%, 3% 34%);
+}
+
+.city-right {
+  top: 2%;
+  right: -2%;
+  width: clamp(230px, 24vw, 335px);
+  height: clamp(165px, 18vw, 235px);
+  clip-path: polygon(2% 4%, 21% 0, 42% 3%, 62% 0, 82% 3%, 100% 1%, 97% 24%, 100% 46%, 96% 67%, 100% 96%, 77% 100%, 54% 96%, 31% 100%, 0 95%, 4% 72%, 0 49%, 3% 26%);
+}
+
+.city-bottom {
+  right: -2%;
+  bottom: 2%;
+  width: clamp(245px, 25vw, 345px);
+  height: clamp(170px, 19vw, 250px);
+  clip-path: polygon(0 4%, 19% 0, 37% 3%, 55% 0, 75% 4%, 100% 1%, 97% 22%, 100% 43%, 97% 65%, 100% 97%, 78% 94%, 56% 100%, 36% 96%, 16% 100%, 0 95%, 4% 74%, 0 52%, 3% 29%);
+}
+
+.extra-photo-slot {
+  z-index: 1;
+  left: -2%;
+  bottom: 2%;
+  width: clamp(230px, 24vw, 325px);
+  aspect-ratio: 1.5;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  clip-path: polygon(1% 4%, 20% 0, 40% 3%, 60% 0, 80% 4%, 100% 1%, 97% 25%, 100% 49%, 96% 73%, 100% 96%, 77% 100%, 55% 96%, 33% 100%, 12% 96%, 0 99%, 4% 76%, 0 53%, 3% 28%);
+  transform: rotate(0);
+}
+
+.extra-photo-slot img {
+  filter: saturate(.9) contrast(.98);
+}
+
+.photo-tape,
+.extra-photo-slot::before,
+.extra-photo-slot::after,
+.blue-torn-edge {
+  display: none;
+}
+
+.hero-note {
+  top: 10%;
+  left: 33%;
+  right: auto;
+  z-index: 4;
+  color: var(--navy);
+  font-family: "Marker Felt", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 20px;
+  line-height: 1.18;
+  transform: rotate(-8deg);
+}
+
+.sticker {
+  z-index: 4;
+  padding: 18px 20px;
+  font-family: "Marker Felt", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.25;
+  box-shadow: none;
+  animation: none;
+}
+
+.sticker-left {
+  top: 48%;
+  left: 1.5%;
+  background: #f4d08ad9;
+  transform: rotate(-10deg);
+}
+
+.sticker-right {
+  top: 18%;
+  right: 15%;
+  background: #d5e1cedd;
+  border-radius: 45% 55% 60% 40% / 54% 42% 58% 46%;
+  clip-path: polygon(8% 10%, 25% 2%, 43% 7%, 62% 0, 78% 9%, 97% 11%, 92% 30%, 100% 48%, 92% 66%, 96% 88%, 73% 92%, 54% 100%, 35% 92%, 14% 98%, 10% 78%, 0 61%, 7% 42%, 1% 25%);
+  transform: rotate(-7deg);
+}
+
+.sticker-small-steps {
+  top: 53%;
+  right: 1%;
+  background: #d4e0e5df;
+  transform: rotate(5deg);
+}
+
+.doodle-star {
+  top: 24%;
+  left: 39%;
+  z-index: 4;
+  color: #efbd55;
+  font-size: 62px;
+}
+
+.doodle-heart {
+  right: 8%;
+  bottom: 15%;
+  z-index: 4;
+  color: var(--navy);
+  font-size: 48px;
+}
+
+.doodle-spark-one {
+  top: 31%;
+  left: 42%;
+  color: #ed684f;
+  font-size: 32px;
+}
+
+.doodle-spark-two {
+  top: 70%;
+  left: 59%;
+  color: #e6a74b;
+  font-size: 28px;
+}
+
+.paper-flower {
+  top: 69%;
+  left: 50%;
+  z-index: 4;
+  color: #e6a74b;
+  font-size: 36px;
+}
+
+.tiny-dots {
+  top: 50%;
+  right: 18%;
+  z-index: 3;
+}
+
+.handwritten {
+  left: 51%;
+  bottom: 9%;
+  z-index: 5;
+  color: var(--navy);
+  font-family: "Marker Felt", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .logo { font-size: 24px; }
+
+  .collage-hero {
+    min-height: 0;
+    padding: 90px 7% 120px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .collage-hero::before {
+    clip-path: polygon(0 1%, 20% 2%, 40% 0, 60% 2%, 80% 0, 100% 2%, 98% 96%, 80% 94%, 60% 97%, 40% 94%, 20% 97%, 0 94%);
+  }
+
+  .hero-copy {
+    grid-row: 1;
+    max-width: 520px;
+    padding: 10px 0 22px;
+  }
+
+  .collage-hero h1 {
+    font-size: clamp(68px, 13vw, 96px);
+    letter-spacing: -3px;
+  }
+
+  .collage-hero h1 .headline-hi { left: -8px; }
+  .collage-hero h1 .name-highlight { left: 28px; padding: 7px 16px 14px; }
+
+  .hero-description {
+    margin: 17px 0 20px;
+    font-size: 15px;
+  }
+
+  .portrait-wrap {
+    grid-row: 2;
+    width: min(74%, 310px);
+    max-width: 310px;
+    justify-self: start;
+    margin: 0 0 0 3%;
+    transform: translateY(12px) rotate(-2deg);
+  }
+
+  .city-left { top: 2%; left: -18px; width: 135px; height: 100px; }
+  .city-right { top: 2%; right: -18px; width: 130px; height: 95px; }
+  .city-bottom { display: none; }
+  .extra-photo-slot { left: -8px; bottom: 2%; width: 145px; }
+  .hero-note { top: 13%; left: 7%; font-size: 15px; }
+  .sticker { padding: 12px 14px; font-size: 12px; }
+  .sticker-left { top: 55%; left: auto; right: 4%; }
+  .sticker-right { top: 27%; right: 2%; }
+  .sticker-small-steps { top: 67%; right: 2%; }
+  .doodle-star { top: 32%; left: auto; right: 8%; font-size: 38px; }
+  .doodle-heart { right: 7%; bottom: 10%; font-size: 32px; }
+  .doodle-spark-one { top: 34%; left: 8%; font-size: 24px; }
+  .doodle-spark-two, .paper-flower, .tiny-dots, .doodle-caption { display: none; }
+  .handwritten { left: auto; right: 9%; bottom: 5%; font-size: 15px; }
+}
 
 </style>
 
@@ -1604,6 +2189,8 @@ footer {
     <a href="#about" class="nav-link">About Me</a>
 
     <a href="#work" class="nav-link">Work</a>
+
+    <a href="#reflection" class="nav-link">Reflection</a>
 
     <a href="#contact" class="nav-link">Contact</a>
 
@@ -1635,6 +2222,16 @@ footer {
 
   <span class="photo-tape tape-right"></span>
 
+  <div class="extra-photo-slot">
+    <img src="cambridge.jpg" alt="Cambridge photo in the scrapbook collage">
+  </div>
+
+  <span class="extra-doodle doodle-spark-one" aria-hidden="true">✧</span>
+  <span class="extra-doodle doodle-spark-two" aria-hidden="true">✦</span>
+  <span class="paper-flower" aria-hidden="true">✿</span>
+  <span class="extra-doodle doodle-caption" aria-hidden="true">little moments</span>
+  <span class="tiny-dots" aria-hidden="true"></span>
+
   <!-- Floating collage stickers -->
 
   <div class="sticker sticker-left">
@@ -1646,6 +2243,12 @@ footer {
   <div class="sticker sticker-right">
 
     CREATIVE MIND<br>BIG DREAMS ✳
+
+  </div>
+
+  <div class="sticker sticker-small-steps">
+
+    Small steps<br>Big plans ☺
 
   </div>
 
@@ -1665,8 +2268,6 @@ footer {
 
   <div class="portrait-wrap">
 
-    <div class="torn-paper"></div>
-
     <img
 
       class="portrait"
@@ -1683,11 +2284,9 @@ footer {
 
   <div class="hero-copy">
 
-    <p class="eyebrow">A LITTLE BIT OF EVERYTHING ✳</p>
-
     <h1>
 
-      Hi, I'm<br>
+      <span class="headline-hi">Hi, I'm</span>
 
       <span class="name-highlight">Vesper.</span>
 
@@ -1695,9 +2294,7 @@ footer {
 
     <p class="hero-description">
 
-      Advertising student, digital media enthusiast,
-
-      and a curious mind exploring the world of creativity.
+      I'm a Digital Media student.
 
     </p>
 
@@ -1715,12 +2312,11 @@ footer {
 
 </section>
 
-
 <!-- ===== ABOUT ME ===== -->
 
 <section class="about" id="about">
 
-  <div class="about-top-note">
+  <div class="reflection-top-note">
     <span>01 / THE PERSON BEHIND THE IDEAS</span>
     <span>A LITTLE ABOUT ME ✳</span>
   </div>
@@ -1779,18 +2375,16 @@ footer {
 
   </div>
 
-  <div class="about-bottom-note">
-    <span>ENDLESS CURIOSITY</span>
-    <span>PAGE 01 ✳</span>
-  </div>
-
 </section>
 
 <!-- ===== WORK ===== -->
 
 <section class="work" id="work">
 
-  <p class="section-label">02 / MY CREATIVE CORNER</p>
+  <div class="reflection-top-note work-top-note">
+    <span>02 / MY CREATIVE CORNER</span>
+    <span>A GROWING COLLECTION ✳</span>
+  </div>
 
   <h2>Ideas in<br>the wild.</h2>
 
@@ -1840,17 +2434,77 @@ footer {
 
 </section>
 
+<!-- ===== DIGITAL PRACTICE REFLECTION ===== -->
+<section class="reflection" id="reflection">
+  <div class="reflection-top-note">
+    <span>03 / WEEKLY PRACTICE</span>
+    <span>STARTING WITH WEEK 03 ✳</span>
+  </div>
+
+  <div class="reflection-heading">
+    <p class="reflection-eyebrow">THINK · MAKE · REFLECT</p>
+    <h2>Digital Practice<br><span>Reflection.</span></h2>
+    <p class="reflection-intro">A record of what I learn in each workshop and the work I make afterwards.</p>
+  </div>
+
+  <article class="week-entry reveal">
+    <header class="week-entry-heading">
+      <span class="week-number">WEEK 03</span>
+      <div>
+        <p class="reflection-section-label">DIGITAL PRACTICE JOURNAL</p>
+        <h3>Web scraping and working with data</h3>
+      </div>
+    </header>
+
+    <div class="reflection-notes">
+      <section class="reflection-note" aria-labelledby="week3-shift">
+        <p class="reflection-section-label">01 / A NEW PERSPECTIVE</p>
+        <h4 id="week3-shift">A shift in how I see the web</h4>
+        <p>Before this workshop, I thought of websites mainly as places to browse and read. Working with the <a href="https://chromewebstore.google.com/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmbhn" target="_blank" rel="noopener noreferrer">Web Scraper extension</a> and Python scripts in <a href="https://colab.research.google.com/drive/1k6dn4Z9DHehljFMUPuIzl3zQciBPh211?usp=sharing" target="_blank" rel="noopener noreferrer">Google Colab</a> changed that. I realised that webpages are built from structured HTML and can also be treated as sources of data. I began to look at websites through a data analyst’s lens, paying attention to the information behind the page and how it could be collected.</p>
+      </section>
+
+      <section class="reflection-note" aria-labelledby="week3-tools">
+        <p class="reflection-section-label">02 / TOOLS &amp; CHALLENGES</p>
+        <h4 id="week3-tools">Choosing tools and learning their limits</h4>
+        <p>Web Scraper was an easy way for me to collect data and export it as a CSV, even without much coding experience. Running Python in a <a href="https://leeds365-my.sharepoint.com/:u:/g/personal/fbsctb_leeds_ac_uk/IQBle_2knY5bQrnSg_oheCjJATbQAj-PsEw2wV2eWZ-SMPg?e=vcYri8" target="_blank" rel="noopener noreferrer">Jupyter Notebook</a> gave me more control, especially for larger or repetitive tasks. I also learned how easily a scraper can fail when a site changes its layout, blocks automated traffic or displays a cookie pop-up. In those cases, browser automation tools such as Selenium or Playwright can help by interacting with the page through a browser.</p>
+      </section>
+    </div>
+
+    <section class="assignment-block" aria-labelledby="week3-assignment">
+      <div class="assignment-heading">
+        <p class="reflection-section-label">AFTER THE WORKSHOP / ASSIGNMENT</p>
+        <h4 id="week3-assignment">BBC iPlayer scraping exercise</h4>
+        <p>These images show a sample of my scraped programme data and the charts I made from it.</p>
+      </div>
+      <div class="assignment-gallery">
+        <figure>
+          <img src="web%20scraping.jpg" alt="A table of scraped BBC iPlayer programme data, including categories and programme titles." loading="lazy">
+          <figcaption>My scraped BBC iPlayer listings, organised by category.</figcaption>
+        </figure>
+        <figure>
+          <img src="iplayer_popular.png" alt="A horizontal bar chart ranking BBC iPlayer's most popular programmes by inverse rank." loading="lazy">
+          <figcaption>Most Popular Today, ranked by popularity score.</figcaption>
+        </figure>
+        <figure>
+          <img src="iplayer_category.png" alt="A bar chart showing counts of top BBC iPlayer programmes in five categories." loading="lazy">
+          <figcaption>How the top programmes are distributed across categories.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+</section>
+
 <!-- ===== CONTACT ===== -->
 
 <section class="contact" id="contact">
 
-  <p class="section-label">03 / LET'S CONNECT</p>
+  <p class="section-label">04 / LET'S CONNECT</p>
 
   <h2>Let's make<br>something cool.</h2>
 
   <p>Have an idea? I'd love to hear about it.</p>
 
-  <a class="fun-button" href="mailto:your-email@example.com">
+  <a class="fun-button" href="mailto:jianiqian0129@gmail.com">
 
     Say hello <span>↗</span>
 
@@ -1874,67 +2528,41 @@ footer {
 
 // ===== CLICK NAVIGATION =====
 
-const navLinks = document.querySelectorAll(".nav-link");
-
-const sections = document.querySelectorAll(
-
-  "#home, #about, #work, #contact"
-
-);
+const navLinks = [...document.querySelectorAll(".nav-link")];
+const sections = [...document.querySelectorAll("#home, #about, #work, #reflection, #contact")];
+const nav = document.querySelector(".collage-nav");
 
 function setActiveLink(id) {
-
   navLinks.forEach(link => {
-
-    link.classList.toggle(
-
-      "active",
-
-      link.getAttribute("href") === "#" + id
-
-    );
-
+    link.classList.toggle("active", link.getAttribute("href") === "#" + id);
   });
-
 }
 
-navLinks.forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    const id = link.getAttribute("href").slice(1);
-
-    setActiveLink(id);
-
+// Pick the section crossing a fixed line just below the sticky navigation.
+// This avoids competing IntersectionObserver ratios on long sections.
+let scrollTicking = false;
+function updateActiveLink() {
+  const marker = window.scrollY + nav.offsetHeight + 48;
+  let current = sections[0];
+  sections.forEach(section => {
+    if (section.offsetTop <= marker) current = section;
   });
-
-});
-
-// ===== NAVIGATION FOLLOWS SCROLL =====
-
-const sectionObserver = new IntersectionObserver(entries => {
-
-  const visible = entries
-
-    .filter(entry => entry.isIntersecting)
-
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-  if (visible.length > 0) {
-
-    setActiveLink(visible[0].target.id);
-
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 3) {
+    current = sections[sections.length - 1];
   }
-
-}, {
-
-  rootMargin: "-15% 0px -60% 0px",
-
-  threshold: [0, 0.1, 0.3, 0.6]
-
-});
-
-sections.forEach(section => sectionObserver.observe(section));
+  setActiveLink(current.id);
+  scrollTicking = false;
+}
+window.addEventListener("scroll", () => {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(updateActiveLink);
+    scrollTicking = true;
+  }
+}, { passive: true });
+window.addEventListener("resize", updateActiveLink);
+window.addEventListener("hashchange", updateActiveLink);
+window.addEventListener("load", updateActiveLink);
+updateActiveLink();
 
 // ===== PROJECTS REVEAL ON SCROLL =====
 
