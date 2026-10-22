@@ -1010,6 +1010,22 @@ body {
   letter-spacing: 1.5px;
   transform: rotate(-2deg);
 }
+.week-number::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: #72d98a;
+  box-shadow: 0 0 0 3px #72d98a26;
+  vertical-align: 1px;
+}
+.week-entry:not(.is-active) .week-number::after { visibility: hidden; }
+.week-entry.is-active .week-number::after { animation: data-ready-pulse 1.6s ease-in-out infinite; }
+@keyframes data-ready-pulse {
+  50% { box-shadow: 0 0 0 6px #72d98a12; }
+}
 .week-entry-heading h3 {
   margin: 5px 0 0;
   font: bold clamp(24px, 3vw, 34px)/1.2 Georgia, serif;
@@ -1037,6 +1053,19 @@ body {
   font-size: 15px;
   line-height: 1.9;
 }
+.tool-tag {
+  display: inline-block;
+  margin: 0 .08em;
+  padding: .05em .42em;
+  border: 1px solid #c7d9c8;
+  border-radius: 3px;
+  background: #e8f2df;
+  color: #203552;
+  font: 600 .84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.tool-tag:hover { background: #d9edc8; }
 .assignment-block {
   padding-top: 30px;
   border-top: 1px solid #d8ceb9;
@@ -1057,6 +1086,13 @@ body {
   background: #fff;
   box-shadow: 4px 5px 0 #d9c9ae;
   transform: rotate(-.4deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.assignment-gallery figure:hover,
+.assignment-gallery figure:nth-child(2):hover,
+.assignment-gallery figure:first-child:hover {
+  transform: translateY(-8px) rotate(0deg);
+  box-shadow: 7px 12px 0 #d9c9ae;
 }
 .assignment-gallery figure:nth-child(2) {
   transform: rotate(.4deg);
@@ -2460,13 +2496,13 @@ footer {
       <section class="reflection-note" aria-labelledby="week2-shift">
         <p class="reflection-section-label">01 / A NEW PERSPECTIVE</p>
         <h4 id="week2-shift">Becoming a creator, not just a consumer</h4>
-        <p>In our second-week seminar, I started to see the web differently. I’m used to sharing things on social media, where the platform takes care of the layout, storage and distribution. This time, I wrote a basic HTML page and styled it with CSS in a code editor. Checking my work with the <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a> helped me understand that the web is built on structured code and shared standards. Publishing my files through <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a> or <a href="https://desystemshelp.leeds.ac.uk/campuspress-students/" target="_blank" rel="noopener noreferrer">University of Leeds CampusPress</a> made the infrastructure behind a live website feel much more tangible.</p>
+        <p>In our second-week seminar, I started to see the web differently. I’m used to sharing things on social media, where the platform takes care of the layout, storage and distribution. This time, I wrote a basic <code class="tool-tag">HTML</code> page and styled it with <code class="tool-tag">CSS</code> in a code editor. Checking my work with the <a class="tool-tag" href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a> helped me understand that the web is built on structured code and shared standards. Publishing my files through <a class="tool-tag" href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a> or <a class="tool-tag" href="https://desystemshelp.leeds.ac.uk/campuspress-students/" target="_blank" rel="noopener noreferrer">Leeds CampusPress</a> made the infrastructure behind a live website feel much more tangible.</p>
       </section>
 
       <section class="reflection-note" aria-labelledby="week2-challenges">
         <p class="reflection-section-label">02 / TOOLS &amp; CHALLENGES</p>
         <h4 id="week2-challenges">Getting to grips with the details</h4>
-        <p>Building my site and setting up a remote repository took some trial and error. Git and GitHub were new to me, so branches, commits and file paths took time to understand. I also spent a while adjusting the CSS and responsive layout so the page would work well on different screens. Each small fix helped me feel more confident about how a website is put together and published.</p>
+        <p>Building my site and setting up a remote repository took some trial and error. <code class="tool-tag">Git</code> and <code class="tool-tag">GitHub</code> were new to me, so <code class="tool-tag">branches</code>, <code class="tool-tag">commits</code> and file paths took time to understand. I also spent a while adjusting the <code class="tool-tag">CSS</code> and responsive layout so the page would work well on different screens. Each small fix helped me feel more confident about how a website is put together and published.</p>
       </section>
     </div>
   </article>
@@ -2484,13 +2520,13 @@ footer {
       <section class="reflection-note" aria-labelledby="week3-shift">
         <p class="reflection-section-label">01 / A NEW PERSPECTIVE</p>
         <h4 id="week3-shift">A shift in how I see the web</h4>
-        <p>Before this workshop, I thought of websites mainly as places to browse and read. Working with the <a href="https://chromewebstore.google.com/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmbhn" target="_blank" rel="noopener noreferrer">Web Scraper extension</a> and Python scripts in <a href="https://colab.research.google.com/drive/1k6dn4Z9DHehljFMUPuIzl3zQciBPh211?usp=sharing" target="_blank" rel="noopener noreferrer">Google Colab</a> changed that. I realised that webpages are built from structured HTML and can also be treated as sources of data. I began to look at websites through a data analyst’s lens, paying attention to the information behind the page and how it could be collected.</p>
+        <p>Before this workshop, I thought of websites mainly as places to browse and read. Working with the <a class="tool-tag" href="https://chromewebstore.google.com/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmbhn" target="_blank" rel="noopener noreferrer">Web Scraper</a> extension and Python scripts in <a class="tool-tag" href="https://colab.research.google.com/drive/1k6dn4Z9DHehljFMUPuIzl3zQciBPh211?usp=sharing" target="_blank" rel="noopener noreferrer">Google Colab</a> changed that. I realised that webpages are built from structured <code class="tool-tag">HTML</code> and can also be treated as sources of data. I began to look at websites through a data analyst’s lens, paying attention to the information behind the page and how it could be collected.</p>
       </section>
 
       <section class="reflection-note" aria-labelledby="week3-tools">
         <p class="reflection-section-label">02 / TOOLS &amp; CHALLENGES</p>
         <h4 id="week3-tools">Choosing tools and learning their limits</h4>
-        <p>Web Scraper was an easy way for me to collect data and export it as a CSV, even without much coding experience. Running Python in a <a href="https://leeds365-my.sharepoint.com/:u:/g/personal/fbsctb_leeds_ac_uk/IQBle_2knY5bQrnSg_oheCjJATbQAj-PsEw2wV2eWZ-SMPg?e=vcYri8" target="_blank" rel="noopener noreferrer">Jupyter Notebook</a> gave me more control, especially for larger or repetitive tasks. I also learned how easily a scraper can fail when a site changes its layout, blocks automated traffic or displays a cookie pop-up. In those cases, browser automation tools such as Selenium or Playwright can help by interacting with the page through a browser.</p>
+        <p><a class="tool-tag" href="https://chromewebstore.google.com/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmbhn" target="_blank" rel="noopener noreferrer">Web Scraper</a> was an easy way for me to collect data and export it as a <code class="tool-tag">CSV</code>, even without much coding experience. Running Python in a <a class="tool-tag" href="https://leeds365-my.sharepoint.com/:u:/g/personal/fbsctb_leeds_ac_uk/IQBle_2knY5bQrnSg_oheCjJATbQAj-PsEw2wV2eWZ-SMPg?e=vcYri8" target="_blank" rel="noopener noreferrer">Jupyter Notebook</a> gave me more control, especially for larger or repetitive tasks. I also learned how easily a scraper can fail when a site changes its layout, blocks automated traffic or displays a cookie pop-up. In those cases, browser automation tools such as <code class="tool-tag">Selenium</code> or <code class="tool-tag">Playwright</code> can help by interacting with the page through a browser.</p>
       </section>
     </div>
 
@@ -2615,6 +2651,20 @@ document.querySelectorAll(".reveal").forEach(item => {
   revealObserver.observe(item);
 
 });
+
+// Mark the weekly journal entry currently passing through the reading line.
+const weekEntries = document.querySelectorAll(".week-entry");
+if ("IntersectionObserver" in window && weekEntries.length) {
+  const weekObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        weekEntries.forEach(item => item.classList.remove("is-active"));
+        entry.target.classList.add("is-active");
+      }
+    });
+  }, { rootMargin: "-22% 0px -68% 0px", threshold: 0 });
+  weekEntries.forEach(item => weekObserver.observe(item));
+}
 
 </script>
 
